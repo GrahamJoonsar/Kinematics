@@ -1,5 +1,5 @@
 # Inverse Kinematics with two lines
-# I didn't feel like figuring out how to do it professionaly, so I made my own way of doing it.
+# I didn't feel like figuring out how to do it professionally, so I made my own way of doing it.
 
 import pygame, math
 
@@ -31,7 +31,7 @@ class Node:
 n1 = Node (windowWidth/2, windowWidth/2)
 
 l1 = 300
-l2 = 200
+l2 = 300
 
 running = True
 cangle = 0
@@ -42,14 +42,14 @@ while running:
     win.fill((0, 0, 0))
 
     # Mouse position
-    # mx, my = pygame.mouse.get_pos()
+    mx, my = pygame.mouse.get_pos()
 
     # Circle
-    mx = 850 + math.cos(cangle) * 100
-    my = 500 + math.sin(cangle) * 100
+    pygame.draw.circle(win, (255, 255, 255), (mx, my), 100)
+    pygame.draw.circle(win, (0, 0, 0), (mx, my), 99)
+    mx = mx + math.cos(cangle) * 100
+    my = my + math.sin(cangle) * 100
     cangle += math.pi/360
-    pygame.draw.circle(win, (255, 255, 255), (850, 500), 100)
-    pygame.draw.circle(win, (0, 0, 0), (850, 500), 99)
 
 
 
